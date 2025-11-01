@@ -13,7 +13,7 @@ import { UserButton } from "@clerk/nextjs";
 export default function Home() {
   return (
     <Room>
-      <div style={{ position: "absolute", top: "1rem", right: "1rem", zIndex: 1000 }}>
+      <div className="corner-actions">
         <UserButton />
       </div>
       <StorageTldraw />

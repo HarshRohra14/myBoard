@@ -1,11 +1,10 @@
 "use client";
 
 import "tldraw/tldraw.css";
-import { Tldraw, DefaultStylePanel, DefaultStylePanelContent } from "tldraw";
+import { Tldraw, DefaultStylePanel } from "tldraw";
 import { useStorageStore } from "./useStorageStore";
 import { useSelf } from "@liveblocks/react/suspense";
 import { Avatars } from "@/components/Avatars";
-import { Badge } from "@/components/Badge";
 
 /**
  * IMPORTANT: LICENSE REQUIRED
@@ -24,21 +23,22 @@ export function StorageTldraw() {
   });
 
   return (
-    <div style={{ height: "100vh", width: "100vw" }}>
+    <div className="app-shell">
       <Tldraw
         store={store}
         components={{
           // Render a live avatar stack at the top-right
           StylePanel: () => (
             <div
+              className="panel-elevated"
               style={{
-                display: "flex-column",
+                display: "flex",
+                flexDirection: "column",
                 marginTop: 4,
               }}
             >
               <Avatars />
               <DefaultStylePanel />
-              <Badge />
             </div>
           ),
         }}
