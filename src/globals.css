@@ -50,12 +50,28 @@ body {
 }
 
 @media (max-width: 640px) {
-  .tlui-toolbar, .tlui-toolbar__tools {
+  .tlui-toolbar {
+    display: flex !important;
+    position: fixed !important;
+    left: 50% !important;
+    bottom: calc(env(safe-area-inset-bottom) + 10px) !important;
+    transform: translateX(-50%) !important;
+    z-index: 1100 !important;
+    background: rgba(20,24,35,0.7) !important;
+    backdrop-filter: saturate(140%) blur(10px) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    padding: 6px !important;
     gap: 6px !important;
   }
+
+  .tlui-toolbar__tools {
+    gap: 6px !important;
+  }
+
   .tlui-toolbar button, .tlui-button, .tlui-buttons__button {
-    min-width: 36px;
-    min-height: 36px;
+    min-width: 40px;
+    min-height: 40px;
   }
 }
 
